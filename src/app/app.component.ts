@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     { id: 4, name: 'test 4', active: true },
   ];
   api = [
-    { name: 'test 5', active: false },
+    { name: 'test 1', active: false },
     { name: 'test 2', active: false },
   ];
 
@@ -24,11 +24,8 @@ export class AppComponent implements OnInit {
    this.finalList= this.api.forEach((item) => {
       let filtereditems = this.local.filter((x) => x.name === item.name);
       if (filtereditems[0] != null) {
-        console.log(filtereditems);
+        filtereditems[0].active=item.active;
       }
-      // console.log(filtereditems)
     });
-    console.log(this.finalList);
-    console.log(this.local)
   }
 }
